@@ -2,26 +2,22 @@
  * @param {number[]} nums
  * @return {number}
  */
-var majorityElement = function(nums) {
-    let counts = new Map();
-    let temp = 0;
-    let majoritycount = Number.MIN_SAFE_INTEGER;
-    let majority = nums[0];
+//Deepti
 
-    for (let i = 0; i < nums.length; i++){
-        if (counts.get(nums[i])) {
-            temp = counts.get(nums[i]);
-            temp++;
-            if (temp >= majoritycount) {
-                majority = nums[i];
-                majoritycount = temp;
-            }
-            counts.set(nums[i], temp);
-        }
+var majorityElement = function(nums) {
+    let majorityNum = null;
+    let count = 0;
+    for (let num of nums) {
+        if (count == 0)
+            majorityNum = num;
+
+        if (num == majorityNum)
+            count++;
         else
-            counts.set(nums[i], 1);
+            count--;
     }
-    return majority;
+
+    return majorityNum;
 };
 
 let x = majorityElement([6,6,6,7,7]);

@@ -5,23 +5,27 @@ function TreeNode(val, left, right) {
 }
 
 var isBalanced = function (root) {
-    if (root == null)
+    if (checkHeight(root) == -1)
+        return false;
+    else
         return true;
 
-    let left = findheight(root.left);
-    let right = findheight(root.right);
-
-    return (Math.abs(left - right) <= 1 && isBalanced(root.left) && isBalanced(root.right))
-     
-    
-    function findheight(root) {
-        if (root == null)
+    function checkHeight(node) {
+        if (node == null)
             return 0;
-        
-        let leftHeight =  findheight(root.left);
-        let rightHeight =  findheight(root.right);
 
-        return 1+  Math.max(leftHeight, rightHeight);
+        let leftHeight = checkHeight(node.left);
+        if (leftHeight == -1)
+            return -1;
+
+        let rightHeight = checkHeight(node.right);
+        if (rightHeight == -1)
+            return -1;
+
+        if (Math.abs(leftHeight - rightHeight) > 1)
+            return -1;
+
+        return (1 + Math.max(leftHeight, rightHeight));
     }
 };
 

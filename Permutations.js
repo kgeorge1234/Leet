@@ -2,19 +2,19 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function(nums, arr= [], res = []) {
+var permute = function(nums, arr= [], result = []) {
     if (nums.length == 0) {
-        res.push([...arr]);
+        result.push([...arr]);
     }
 
     for (let i = 0; i < nums.length; i++){
         arr.push(nums[i]);
         let rest = nums.filter((_,index) => index != i);
-        permute(rest, arr, res);
+        permute(rest, arr, result);
         arr.pop();
     }
 
-    return res;
+    return result;
 };
 
 let x = permute([1, 2, 3]);

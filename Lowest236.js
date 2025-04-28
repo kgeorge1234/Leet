@@ -41,5 +41,5 @@ let six = new TreeNode(6, null, null);
 let five = new TreeNode(5, six, two);
 let three = new TreeNode(3, five, one);
 
-let x = lowestCommonAncestor(three, five, one);
+let x = lowestCommonAncestor(three, two, four);
 console.log(x);

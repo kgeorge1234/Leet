@@ -2,6 +2,7 @@
  * @param {string} s
  * @return {string[]}
  */
+//cracking faang
 var removeInvalidParentheses = function(s) {
     let result = new Set();
     let maxLength = -1;

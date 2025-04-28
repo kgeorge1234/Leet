@@ -2,6 +2,8 @@
  * @param {string} s
  * @return {string}
  */
+
+//Nick White
 var minRemoveToMakeValid = function(s) {
     let result = "";
     let count = 0;

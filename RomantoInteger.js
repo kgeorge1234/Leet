@@ -38,4 +38,4 @@ var romanToInt = function(s) {
     return result;
 };
 
-console.log(romanToInt("III"));
+console.log(romanToInt("LVIII"));

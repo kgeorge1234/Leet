@@ -2,6 +2,8 @@
  * @param {string} path
  * @return {string}
  */
+//algoJS
+
 var simplifyPath = function (path) {
     let stack = [];
     path = path.split("/");
